@@ -1,0 +1,4 @@
+beautifulsoup4==4.6.3
+sendgrid_python==0.1.1
+schedule==0.5.0
+lxml==4.2.5

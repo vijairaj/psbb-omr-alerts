@@ -1,0 +1,10 @@
+applications:  
+ - name: psbb-omr-alerts  
+   buildpack: python_buildpack
+   memory: 128M  
+   instances: 1  
+   no-route: true  
+   health-check-type: process
+   command: python main.py  
+   path: .  
+
