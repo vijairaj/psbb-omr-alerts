@@ -1,4 +1,4 @@
-from urllib import request
+import urllib
 from bs4 import BeautifulSoup
 from time import asctime, gmtime, sleep
 import sqlite3
@@ -16,7 +16,7 @@ context = {
 
 
 def read_alerts(path):
-    res = request.urlopen(path)
+    res = urllib.urlopen(path)
     doc = res.read()
 
     tree = BeautifulSoup(doc, 'lxml')
@@ -88,5 +88,10 @@ def main():
         schedule.run_pending()  
         sleep(5)
 
-main()
+while True:
+    try:
+        main()
+    except Exception as ex:
+        print("Error:", ex.message)
+    sleep(5)
 
